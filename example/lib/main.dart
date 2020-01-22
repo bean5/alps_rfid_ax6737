@@ -30,6 +30,7 @@ class _MyAppState extends State<MyApp> {
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
+
     AlpsRfidAx6737.dataStream
         .receiveBroadcastStream()
         .listen(rdfidDataListener);
@@ -66,7 +67,7 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: <Widget>[
               Container(
-                height: 150,
+                height: 100,
                 child: ListView.builder(
                   controller: _scrollController,
                   itemCount: tags.length,
@@ -88,6 +89,18 @@ class _MyAppState extends State<MyApp> {
                 },
               ),
               RaisedButton(
+                child: Text('readOne'),
+                onPressed: () {
+                  AlpsRfidAx6737.readOne();
+                },
+              ),
+              RaisedButton(
+                child: Text('readByTimer'),
+                onPressed: () {
+                  AlpsRfidAx6737.readByTimer();
+                },
+              ),
+              RaisedButton(
                 child: Text('clear'),
                 onPressed: () {
                   AlpsRfidAx6737.clear();
@@ -100,6 +113,18 @@ class _MyAppState extends State<MyApp> {
                 child: Text('close'),
                 onPressed: () {
                   AlpsRfidAx6737.close();
+                },
+              ),
+              RaisedButton(
+                child: Text('quary'),
+                onPressed: () {
+                  AlpsRfidAx6737.quary();
+                },
+              ),
+              RaisedButton(
+                child: Text('continuousRead'),
+                onPressed: () {
+                  AlpsRfidAx6737.continuousRead();
                 },
               ),
               RaisedButton(
