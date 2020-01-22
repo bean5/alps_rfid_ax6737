@@ -26,6 +26,12 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    // RFID
+    packagingOptions {
+        exclude 'lib/arm64-v8a/libflutter.so'
+        exclude 'lib/arm64-v8a/libapp.so'
+    }
+
     compileSdkVersion 28
 
     sourceSets {
