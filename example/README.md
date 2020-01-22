@@ -2,8 +2,10 @@
 
 Demonstrates how to use the alps_rfid_ax6737 plugin.
 
-## Running example
-Build `flutter build apk`
+## ADB Uninstall example:
+`adb uninstall com.amorenew.orange_rfid.alps_rfid_ax6737_example`
+
+## Getting Started
 
 Install `adb install -r build/app/outputs/apk/release/app-release.apk`
 
