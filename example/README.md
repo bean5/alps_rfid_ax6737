@@ -2,8 +2,14 @@
 
 Demonstrates how to use the alps_rfid_ax6737 plugin.
 
-## Getting Started
+## Running example
+Build `flutter build apk`
 
+Install `adb install -r build/app/outputs/apk/release/app-release.apk`
+
+You cannot install/start app from VS Code because that uses 64 bit. Running "without debug" has a similar problem. Android Studio might work.
+
+## For your own project
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
