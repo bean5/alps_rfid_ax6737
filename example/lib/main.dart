@@ -13,11 +13,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-
+  ScrollController _scrollController;
   @override
   void initState() {
     super.initState();
     initPlatformState();
+    _scrollController = new ScrollController();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -45,7 +46,14 @@ class _MyAppState extends State<MyApp> {
 
   void rdfidDataListener(dynamic event) {
     print('dart $event');
+    setState(() {
+      tags.add(event);
+      _scrollController.animateTo(_scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 500), curve: Curves.easeOut);
+    });
   }
+
+  List<String> tags = [];
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +65,16 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             children: <Widget>[
+              Container(
+                height: 150,
+                child: ListView.builder(
+                  controller: _scrollController,
+                  itemCount: tags.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Text(tags[index]);
+                  },
+                ),
+              ),
               RaisedButton(
                 child: Text('startRead'),
                 onPressed: () {
