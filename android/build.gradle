@@ -40,14 +40,14 @@ android {
     }
     buildTypes {
         release {
-            ndk {
-                abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'mips', 'mips64'
-            }
+            // ndk {
+            //     abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'mips', 'mips64'
+            // }
         }
         debug {
-            ndk {
-                abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'mips', 'mips64'
-            }
+            // ndk {
+            //     abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'mips', 'mips64'
+            // }
         }
 
     }
