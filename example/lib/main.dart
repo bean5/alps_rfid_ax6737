@@ -73,6 +73,9 @@ class _MyAppState extends State<MyApp> {
                 child: Text('clear'),
                 onPressed: () {
                   AlpsRfidAx6737.clear();
+                  setState(() {
+                    tags.clear();
+                  });
                 },
               ),
               RaisedButton(
